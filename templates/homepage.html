@@ -2,7 +2,11 @@
 
 <ul>
     {% for item in to_do_items %}
-    <li>{{item.content}}</li>
+    <li>{{item.content}}
+        <form action="/delete_item/{{item.id}}/" method="POST" style="display:inline">{% csrf_token %}
+            <button name="delete" type="submit">Delete</button>
+        </form>
+    </li>
     {% endfor %}
 
 </ul>

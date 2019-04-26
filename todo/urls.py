@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from homepage.views import homepage, add_item_view
+from homepage.views import homepage, add_item_view,delete_item_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('homepage/',homepage),
     path('add_item/',add_item_view),
+    path('delete_item/<int:item_id>/',delete_item_view)
 ]

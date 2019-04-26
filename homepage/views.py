@@ -12,3 +12,8 @@ def add_item_view(request):
     item = ToDoItem(content = content)
     item.save()
     return HttpResponseRedirect('/homepage')
+
+def delete_item_view(request,item_id):
+    item = ToDoItem.objects.get(pk=item_id)
+    item.delete()
+    return HttpResponseRedirect('/homepage')
